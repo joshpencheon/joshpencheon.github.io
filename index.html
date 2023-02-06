@@ -5,14 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+    <style type="text/css">
+      header.container {
+        padding-bottom: 0;
+      }
+
+      .title {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: end;
+        column-gap: 1em;
+      }
+
+      .title > img {
+        border-radius: 50%;
+      }
+
+      .title > hgroup {
+        margin-bottom: 0;
+      }
+    </style>
   </head>
   <body>
-    <main class="container">
-      <hgroup>
-        <h1>Josh Pencheon</h1>
-        <h2>Software Engineer</h2>
-      </hgroup>
+    <header class="container">
+      <div class="title">
+        <img src="https://www.gravatar.com/avatar/2783f99511be820712a2408de648e045" alt="Headshot of Josh">
+        <hgroup>
+          <h1>Josh Pencheon</h1>
+          <h2>Software Engineer</h2>
+        </hgroup>
+      </div>
+    </header>
 
+    <main class="container">
       <section>
         <h6>About me</h6>
         <p>
