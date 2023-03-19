@@ -20,11 +20,19 @@
         flex-wrap: wrap;
         align-items: end;
         column-gap: 1em;
+        row-gap: 1em;
       }
 
-      .title > img {
+      .avatar {
+        flex-grow: 1;
+      }
+
+      .avatar > img {
         border-radius: 50%;
         border: 3px solid currentcolor;
+        height: 4rem;
+        display: block;
+        margin: 0 auto;
       }
 
       .title > hgroup {
@@ -58,7 +66,9 @@
   <body>
     <header class="container">
       <div class="title">
-        <img src="https://www.gravatar.com/avatar/2783f99511be820712a2408de648e045" alt="Headshot of Josh">
+        <div class="avatar">
+          <img src="https://www.gravatar.com/avatar/2783f99511be820712a2408de648e045" alt="Headshot of Josh">
+        </div>
         <hgroup>
           <h1>Josh Pencheon</h1>
           <h2>Software Engineer</h2>
