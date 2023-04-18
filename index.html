@@ -17,10 +17,11 @@
     </script>
 
     <style type="text/css">
-      html {
+      body {
         --gradient-colour: #fff;
         --gradient-tint: #fcf5e5;
         --gradient-duration: 15s;
+        background-colour: var(--gradient-color);
         background: linear-gradient(-45deg, var(--gradient-colour), var(--gradient-tint), var(--gradient-colour), var(--gradient-tint));
         background-size: 400% 400%;
         animation: gradient var(--gradient-duration) ease infinite;
@@ -28,9 +29,9 @@
       }
 
       @media only screen and (prefers-color-scheme: dark) {
-        html {
-          --gradient-colour: #11191f;
-          --gradient-tint: #19252e;
+        body {
+          --gradient-colour: #000000;
+          --gradient-tint: #11191f;
         }
       }
 
@@ -93,7 +94,7 @@
       section:nth-of-type(2) { --delay: 0.2s }
 
       @media (prefers-reduced-motion) {
-        html {
+        body {
           --gradient-duration: 0s;
         }
         header, section {
