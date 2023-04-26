@@ -17,36 +17,6 @@
     </script>
 
     <style type="text/css">
-      body {
-        --gradient-colour: #fff;
-        --gradient-tint: #fcf5e5;
-        --gradient-duration: 15s;
-        background-colour: var(--gradient-color);
-        background: linear-gradient(-45deg, var(--gradient-colour), var(--gradient-tint), var(--gradient-colour), var(--gradient-tint));
-        background-size: 400% 400%;
-        animation: gradient var(--gradient-duration) ease infinite;
-        height: 100vh;
-      }
-
-      @media only screen and (prefers-color-scheme: dark) {
-        body {
-          --gradient-colour: #000000;
-          --gradient-tint: #11191f;
-        }
-      }
-
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
       header.container {
         padding-bottom: 0;
       }
@@ -94,9 +64,6 @@
       section:nth-of-type(2) { --delay: 0.2s }
 
       @media (prefers-reduced-motion) {
-        body {
-          --gradient-duration: 0s;
-        }
         header, section {
           --duration: 0s;
         }
