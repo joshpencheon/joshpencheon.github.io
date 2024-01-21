@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Josh Pencheon</title>
+    <meta name="description" content="Edinburgh-based full stack software developer.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+    <script defer
+      src='https://static.cloudflareinsights.com/beacon.min.js'
+      data-cf-beacon='{"token": "017d45c612ea4c63acea27d1f15e336e"}'>
+    </script>
+
+    <style type="text/css">
+      header.container {
+        padding-bottom: 0;
+      }
+
+      .title {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: end;
+        column-gap: 1em;
+        row-gap: 1em;
+      }
+
+      .avatar {
+        flex-grow: 1;
+      }
+
+      .avatar > img {
+        border-radius: 50%;
+        border: 3px solid currentcolor;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .title > hgroup {
+        flex-grow: 9999;
+        margin-bottom: 0;
+      }
+
+      section > h3 {
+        --font-size: 1rem;
+        --typography-spacing-vertical: 1.5rem;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-1rem) }
+        to   { opacity: 1; transform: translateY(0)     }
+      }
+
+      header, section {
+        --delay: 0s;
+        --duration: 0.5s;
+        position: relative;
+        opacity: 0.01;
+        animation: var(--duration) ease var(--delay) fadeIn forwards;
+      }
+
+      section:nth-of-type(1) { --delay: 0.1s }
+      section:nth-of-type(2) { --delay: 0.2s }
+
+      @media (prefers-reduced-motion) {
+        header, section {
+          --duration: 0s;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    {% include header.html %}
+
+    <main class="container">
+      {{ content }}
+    </main>
+  </body>
+</html>
+
