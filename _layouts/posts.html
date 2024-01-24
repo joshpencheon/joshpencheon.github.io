@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Josh Pencheon</title>
+    <meta name="description" content="Edinburgh-based full stack software developer.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+    <script defer
+      src='https://static.cloudflareinsights.com/beacon.min.js'
+      data-cf-beacon='{"token": "017d45c612ea4c63acea27d1f15e336e"}'>
+    </script>
+
+    <style type="text/css">
+      header.container, main.container {
+        --block-spacing-vertical: 10px;
+      }
+
+      .avatar > img {
+        border-radius: 50%;
+        border: 1px solid currentcolor;
+        height: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <nav aria-label="breadcrumb">
+        <ul>
+          <li>
+            <a href="/" class="contrast">
+              <span class="avatar">
+                <img
+                    src="https://www.gravatar.com/avatar/2783f99511be820712a2408de648e045?s=160"
+                    alt="Headshot of Josh">
+              </span>
+            </a>
+          </li>
+          {%- if page.title != "Posts" -%}
+          <li><a href="/posts" class="contrast">Posts</a></li>
+          {%- endif -%}
+          <li>{{ page.title }}</li>
+        </ul>
+      </nav>
+      <hgroup>
+        <h1>{{ page.title }}</h1>
+        <h2>{{ page.date | date: "%Y-%m-%d" }}</h2>
+      </hgroup>
+    </header>
+
+    <main class="container">
+      {{ content }}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{%- assign total_count = site.posts | size -%}
+
+{% if total_count > 0 %}
+<section>
+  <h3>Posting</h3>
+  <p>
+  Sometimes, I find it helpful to write about things I've been working on. Recently:
+  </p>
+
+  <ul>
+    {%- assign recent_posts = site.posts | slice: 0, include.recent_count -%}
+
+    {%- for post in recent_posts -%}
+    <li>
+      <a class="contrast" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> on {{ post.date | date: "%Y-%m-%d" }}
+    </li>
+    {% endfor %}
+
+    {%- assign rendered_posts_count = recent_posts | size -%}
+    {%- assign further_count = total_count | minus: rendered_posts_count -%}
+
+    {% if further_count > 0 %}
+    <li>
+      <a class="contrast" href="/posts">
+        <em>...and {{ further_count }} more</em>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</section>
+{% endif %}

@@ -1,0 +1,16 @@
+---
+layout: posts
+permalink: /posts/
+title: Posts
+---
+
+<section>
+  <ul>
+    {%- for post in site.posts -%}
+    <li>
+      <a class="contrast" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> on {{ post.date | date: "%Y-%m-%d" }}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
