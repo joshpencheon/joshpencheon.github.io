@@ -1,3 +1,6 @@
-# Extra excludes for Jekyll
+# SHA to my gravatar:
+gravatar: 2783f99511be820712a2408de648e045
+
+# Extra excludes:
 exclude:
   - CNAME

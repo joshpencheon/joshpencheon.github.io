@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    {% include shared_head.html %}
+
+    <style type="text/css">
+      header.container, main.container {
+        --block-spacing-vertical: 10px;
+      }
+
+      img.avatar {
+        border-radius: 50%;
+        border: 1px solid currentcolor;
+        height: calc(var(--line-height) * var(--font-size));
+        transition: transform 0.2s;
+      }
+
+      a:hover > img.avatar {
+        transform: scale(1.2);
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-1rem) }
+        to   { opacity: 1; transform: translateY(0)     }
+      }
+
+      nav, hgroup.title, main {
+        --duration: 0.3s;
+        position: relative;
+        opacity: 0.01;
+        animation: var(--duration) ease var(--delay) fadeIn forwards;
+      }
+
+      nav { --delay: 0s }
+      hgroup.title { --delay: 0.1s }
+      main { --delay: 0.2s }
+
+      @media (prefers-reduced-motion) {
+         nav, hgroup.title, main {
+          --duration: 0s;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <nav aria-label="breadcrumb">
+        <ul>
+          <li>
+            <a href="/" class="contrast">
+              <img
+                  src="https://www.gravatar.com/avatar/{{ site.gravatar }}?s=160"
+                  alt="Headshot of Josh"
+                  class="avatar">
+            </a>
+          </li>
+          {%- if page.title != "Posts" -%}
+          <li><a href="/posts" class="contrast">Posts</a></li>
+          {%- endif -%}
+          <li>{{ page.title }}</li>
+        </ul>
+      </nav>
+      <hgroup class="title">
+        <h1>{{ page.title }}</h1>
+        <h2>{{ page.date | date: "%Y-%m-%d" }}</h2>
+      </hgroup>
+    </header>
+
+    <main class="container">
+      {{ content }}
+    </main>
+  </body>
+</html>
