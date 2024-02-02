@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Preparing Raspberry Pi 5 for PCIe boot
+tags: nvme raspberry-pi ssd
 ---
 
 SD Cards are fine for many applications, but they're not the fastest or most durable media. Particularly if you're wanting to set up something like a little NAS, or run more write-intensive loads like Kubernetes, it can help to soup up your storage!

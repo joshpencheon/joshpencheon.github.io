@@ -4,6 +4,11 @@ permalink: /posts/
 title: Posts
 ---
 
+<p>
+  This is a chronological listing of all posts I've made.
+  You can also <a href="/tags" class="contrast">browse by tag</a> if you like.
+</p>
+
 {% assign posts_by_year = site.posts |
    group_by_exp: "post", "post.date | | date: '%Y'" %}
 

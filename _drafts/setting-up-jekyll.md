@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Setting up Jekyll
+tags: jekyll
 ---
 
 Not much to it really:

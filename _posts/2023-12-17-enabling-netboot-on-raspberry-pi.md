@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Enabling Netboot on Raspberry Pi
+tags: netboot raspberry-pi
 ---
 
 SD Cards are not the most durable things in the world, and using them as the boot media can cause problems over time. It's possible to boot in other ways too, such as from an SSD connected via USB, but a good option when you've got lots of devices is to boot over the network. This allows you to central your storage, and can allow for fast re-imaging of devices.

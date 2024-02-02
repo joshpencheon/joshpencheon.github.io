@@ -1,0 +1,28 @@
+---
+layout: posts
+permalink: /tags/
+title: Post Tags
+---
+
+<p>
+  This is a listing of all post tags with associated posts.
+  You can also <a href="/posts" class="contrast">browse chronologically</a> if you like.
+</p>
+
+{% for tag in site.tags %}
+  {% assign name = tag[0] %}
+  {% assign posts = tag[1] %}
+
+  <section>
+    <h2 id="{{name}}"><code>#{{ name }}</code></h2>
+
+    <ul>
+      {% for post in posts %}
+      <li>
+        <a class="contrast" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <small>on {{ post.date | date: "%Y-%m-%d" }}</small>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endfor %}

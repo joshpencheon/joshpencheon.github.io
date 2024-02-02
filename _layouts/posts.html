@@ -24,7 +24,7 @@
         to   { opacity: 1; transform: translateY(0)     }
       }
 
-      nav, hgroup.title, main {
+      nav, div.frontmatter, main {
         --duration: 0.3s;
         position: relative;
         opacity: 0.01;
@@ -32,11 +32,11 @@
       }
 
       nav { --delay: 0s }
-      hgroup.title { --delay: 0.1s }
+      div.frontmatter { --delay: 0.1s }
       main { --delay: 0.2s }
 
       @media (prefers-reduced-motion) {
-         nav, hgroup.title, main {
+         nav, div.frontmatter, main {
           --duration: 0s;
         }
       }
@@ -60,10 +60,24 @@
           <li>{{ page.title }}</li>
         </ul>
       </nav>
-      <hgroup class="title">
-        <h1>{{ page.title }}</h1>
-        <h2>{{ page.date | date: "%Y-%m-%d" }}</h2>
-      </hgroup>
+
+      <div class="frontmatter">
+        <hgroup>
+          <h1>{{ page.title }}</h1>
+          <h2>{{ page.date | date: "%Y-%m-%d" }}</h2>
+        </hgroup>
+
+        {%- assign tag_count = page.tags | size -%}
+        {% if tag_count > 0 %}
+          <p>
+          {% for tag in page.tags %}
+            <a href="/tags#{{tag}}">
+              <code>#{{tag}}</code>
+            </a>
+          {% endfor %}
+          </p>
+        {% endif %}
+      </div>
     </header>
 
     <main class="container">
