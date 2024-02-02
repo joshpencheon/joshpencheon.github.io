@@ -9,7 +9,8 @@ title: Post Tags
   You can also <a href="/posts" class="contrast">browse chronologically</a> if you like.
 </p>
 
-{% for tag in site.tags %}
+{% assign sorted_tags = site.tags | sort %}
+{% for tag in sorted_tags %}
   {% assign name = tag[0] %}
   {% assign posts = tag[1] %}
 
