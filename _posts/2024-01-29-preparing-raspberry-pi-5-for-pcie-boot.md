@@ -12,7 +12,7 @@ Whereas preparing a bootable SD card for a Raspberry Pi is easy enough, it's a l
 
 The first thing you'll need is an adaptor, like [this board from Pimoroni](https://shop.pimoroni.com/products/nvme-base), to provide an M.2 interface supporting "M key" SSDs up to 80mm in length.
 
-If, once you've connected  drive it isn't recognised, you may need to add to your boot `config.txt` the following to ensure the connector is enabled:
+If after connecting the drive it still isn't recognised, you may need to add to your boot `config.txt` the following to ensure the connector is enabled:
 
 ```
 dtparam=pciex1
@@ -30,8 +30,7 @@ We'll start by downloading a fresh copy of our OS, in this case Ubuntu 23.10:
 
 ```
 $ cd ~/Downloads
-$ wget https://cdimage.ubuntu.com/releases/23.10/release/ubuntu-23.10-preinstalled
--server-arm64+raspi.img.xz
+$ wget https://cdimage.ubuntu.com/releases/23.10/release/ubuntu-23.10-preinstalled-server-arm64+raspi.img.xz
 ```
 
 and then verifying the SHA256 signature of it:
