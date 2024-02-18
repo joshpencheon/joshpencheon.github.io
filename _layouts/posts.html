@@ -4,8 +4,12 @@
     {% include shared_head.html %}
 
     <style type="text/css">
-      header.container, main.container {
-        --block-spacing-vertical: 10px;
+      :root {
+        --pico-nav-breadcrumb-divider: "/";
+      }
+
+      hgroup > :not(:first-child):last-child {
+        line-height: 1.5em;
       }
 
       figure > img {
@@ -26,7 +30,7 @@
       img.avatar {
         border-radius: 50%;
         border: 1px solid currentcolor;
-        height: calc(var(--line-height) * var(--font-size));
+        height: 1.5rem;
         transition: transform 0.2s;
       }
 
@@ -72,7 +76,7 @@
           {%- if page.title != "Posts" -%}
           <li><a href="/posts" class="contrast">Posts</a></li>
           {%- endif -%}
-          <li class="page-title">{{ page.title }}</li>
+          <li class="page-title"><a href="{{ page.url }}" class="contrast">{{ page.title }}</a></li>
         </ul>
       </nav>
 
@@ -84,14 +88,12 @@
 
         {%- assign tag_count = page.tags | size -%}
         {% if tag_count > 0 %}
-          <p>
           {% assign sorted_tags = page.tags | sort %}
           {% for tag in sorted_tags %}
             <a href="/tags#{{tag}}">
               <code>#{{tag}}</code>
             </a>
           {% endfor %}
-          </p>
         {% endif %}
       </div>
     </header>
