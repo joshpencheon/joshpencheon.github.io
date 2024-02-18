@@ -24,12 +24,17 @@
         flex-grow: 1;
       }
 
-      .avatar > img {
+      .avatar > a > img {
         border-radius: 50%;
         border: 3px solid currentcolor;
         display: block;
         margin: 0 auto;
         height: 3rem;
+        transition: transform 0.2s;
+      }
+
+      .avatar > a:hover > img {
+        transform: scale(1.1);
       }
 
       .title > hgroup {
