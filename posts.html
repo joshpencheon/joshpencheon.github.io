@@ -6,7 +6,7 @@ title: Posts
 
 <p>
   This is a chronological listing of all posts I've made.
-  You can also <a href="/tags" class="contrast">browse by tag</a> if you like.
+  You can also <a href="/tags">browse by tag</a> if you like.
 </p>
 
 {% assign posts_by_year = site.posts |
@@ -18,7 +18,7 @@ title: Posts
     <ul>
       {%- for post in year.items -%}
       <li>
-        <a class="contrast" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         <small>on {{ post.date | date: "%Y-%m-%d" }}</small>
       </li>
       {% endfor %}

@@ -12,7 +12,7 @@
 
     {%- for post in recent_posts -%}
     <li>
-      <a class="contrast" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
       <small>
       on {{ post.date | date: "%Y-%m-%d" }}
       </small>
@@ -24,7 +24,7 @@
 
     {% if further_count > 0 %}
     <li>
-      <a class="contrast" href="/posts">
+      <a href="/posts">
         <small>
           <em>...and {{ further_count }} more</em>
         </small>

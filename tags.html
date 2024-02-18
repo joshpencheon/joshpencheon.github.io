@@ -6,7 +6,7 @@ title: Post Tags
 
 <p>
   This is a listing of all post tags with associated posts.
-  You can also <a href="/posts" class="contrast">browse chronologically</a> if you like.
+  You can also <a href="/posts">browse chronologically</a> if you like.
 </p>
 
 {% assign sorted_tags = site.tags | sort %}
@@ -20,7 +20,7 @@ title: Post Tags
     <ul>
       {% for post in posts %}
       <li>
-        <a class="contrast" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         <small>on {{ post.date | date: "%Y-%m-%d" }}</small>
       </li>
       {% endfor %}
