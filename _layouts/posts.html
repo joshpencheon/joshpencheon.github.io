@@ -8,6 +8,15 @@
         --pico-nav-breadcrumb-divider: "/";
       }
 
+      a:has(code):is(a,[aria-current]:not([aria-current=false]),:hover,:active,:focus) {
+        --pico-text-decoration: none
+      }
+
+      a:is([aria-current]:not([aria-current=false]),:hover,:active,:focus) > code {
+        color: var(--pico-code-background-color);
+        background-color: var(--pico-code-color);
+      }
+
       hgroup > :not(:first-child):last-child {
         line-height: 1.5em;
       }
