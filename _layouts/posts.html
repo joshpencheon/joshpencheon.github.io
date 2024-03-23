@@ -69,6 +69,14 @@
         }
       }
     </style>
+
+    {%- assign tag_count = page.tags | size -%}
+    {% if tag_count > 0 %}
+      {% assign sorted_tags = page.tags | sort %}
+      {% for tag in sorted_tags %}
+        <meta property="article:tag" content="{{ tag }}">
+      {% endfor %}
+    {% endif %}
   </head>
   <body>
     <header class="container">

@@ -1,6 +1,24 @@
+title: Josh Pencheon - Software Engineer
+
+locale: en_GB
+
+author:
+  name: Josh Pencheon
+  url: https://josh.pencheon.dev
+
+social:
+  name: Josh Penchon
+  links:
+    - https://github.com/joshpencheon
+    - https://www.linkedin.com/in/josh-pencheon-a0a88558/
+
 # SHA to my gravatar:
 gravatar: 2783f99511be820712a2408de648e045
 
 # Extra excludes:
 exclude:
   - CNAME
+
+# Plugins (extra gems)
+plugins:
+  - jekyll-seo-tag
