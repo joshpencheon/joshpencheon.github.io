@@ -53,9 +53,9 @@ While there is lots of documentation about using `screen` to connect, I found us
 
 {%
   include figure.html
-    alt="Animation of using minicom to debug RPi's boot firmware"
+    alt="Animation of using picocom to debug RPi's boot firmware"
     src="/assets/images/firmware-debug.gif"
-    caption="Using minicom to observe a Raspberry Pi's firmware booting"
+    caption="Using picocom to observe a Raspberry Pi's firmware booting"
 %}
 
 With the USB cable attached, it should appear as a serial device and can then be connected to whilst specifying the baud rate of the connection:

@@ -9,12 +9,12 @@ After 13 years of using an original Retina MacBook Pro, I've finally made the mo
 
 ## Time Machine
 
-Using [Migration Assistant](https://support.apple.com/en-gb/102613) to restore a macOS install is the quickest route to take, but if you prefer to start with a clean slate setting up a new Time Machine target is a good thing to done straight away. That's the route I took, given my previous install had over a decade of cruft.
+Using [Migration Assistant](https://support.apple.com/en-gb/102613) to restore a macOS install is the quickest route to take, but if you prefer to start with a clean slate then setting up a new Time Machine target is a good thing to get done straight away. That's the route I took, given my previous install had over a decade of cruft.
 
 
 ## 1Password
 
-This password manager is not available from the Mac App Store, but can be [downloaded directly](https://1password.com/downloads/mac/) instead. Get logged in to your account, and then the Safari extension can be installed from the App Store.
+This password manager is not available from the Mac App Store, but can be [downloaded directly](https://1password.com/downloads/mac/) instead. Get logged in to your account, and then the Safari extension can be installed from the App Store. If you use 1Password to hold your SSH keys as well, you'll also want to enable the SSH agent from `Settings -> Developer`.
 
 
 ## Homebrew
@@ -46,5 +46,5 @@ sudo chsh -s "$(brew --prefix)/bin/bash" $USER
 
 There are some things that might be worth retrieving from the old computer, or a Time Machine backup from it:
 
-* `~/.ssh` - this directory contains host configuration and SSH keypair(s).
+* `~/.ssh` - this directory contains host configuration and any SSH keypair(s) not managed by 1Password.
 * Any items in the local Keychain (that won't have been propagated via iCloud).

@@ -25,7 +25,7 @@ If you're using a git repository, you could take things a bit further by adding 
 
 if command -v exiftool > /dev/null; then
     exiftool -all= --icc_profile:all assets/images/*
-    if stat -t assets/images/*_original > /dev/null 2>&1; then
+    if stat -q assets/images/*_original > /dev/null 2>&1; then
         echo "Aborting: Exif metadata was stripped, please review!"
         exit 1
     fi
