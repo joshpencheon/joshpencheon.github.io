@@ -25,13 +25,13 @@ More likely, you'll want to use a USB device like [this one](https://shop.pimoro
 
 On the Pi, you'll need to have updated the boot `config.txt` to include the following line:
 
-```
+```bash
 enable_uart=1
 ```
 
 You can enable additional earlier serial output during boot by using `sudo -E rpi-eeprom-config --edit` to edit the EEPROM, and setting:
 
-```
+```bash
 BOOT_UART=1
 ```
 
@@ -41,7 +41,7 @@ This can be helpful to see exactly where things might be getting stuck if a Pi i
 
 If you've got a Raspberry Pi 5, the default serial output is done through a new dedicated UART header rather than the GPIO pins. For consistency, you can revert back to the old behaviour of using the GPIO pins by also adding the following:
 
-```
+```bash
 dtparam=uart0_console
 ```
 

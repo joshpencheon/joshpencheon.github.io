@@ -20,7 +20,7 @@ sudo -E rpi-eeprom-config --edit
 
 We'll make two additions to the file:
 
-```
+```bash
 BOOT_ORDER=0x21
 TFTP_PREFIX=2
 ```

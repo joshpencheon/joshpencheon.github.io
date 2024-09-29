@@ -10,25 +10,25 @@ When deciding on a straightforward solution for generating these articles, I set
 
 Jekyll is most easily installed as a Ruby gem:
 
-```ruby
+```bash
 gem install jekyll
 ```
 
 To get a new Jekyll project started, you can use the built-in generator to scaffold up the basic directory structure:
 
 ```bash
-$ jekyll new my_project
+jekyll new my_project
 
-$ tree my_project
-my_project
-├── 404.html
-├── Gemfile
-├── Gemfile.lock
-├── _config.yml
-├── _posts
-│   └── 2024-02-18-welcome-to-jekyll.markdown
-├── about.markdown
-└── index.markdown
+tree my_project
+# my_project
+# ├── 404.html
+# ├── Gemfile
+# ├── Gemfile.lock
+# ├── _config.yml
+# ├── _posts
+# │   └── 2024-02-18-welcome-to-jekyll.markdown
+# ├── about.markdown
+# └── index.markdown
 ```
 
 You can then run `jekyll serve` to have Jekyll watch the directory, continuously build static HTML into `_site/`, and serve it on port 4000.
