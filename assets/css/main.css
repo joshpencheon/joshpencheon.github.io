@@ -1,0 +1,65 @@
+:root {
+  --pico-spacing: 4rem;
+}
+
+header.container {
+  padding-bottom: 0;
+}
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  column-gap: 1em;
+  row-gap: 1em;
+}
+
+.avatar {
+  flex-grow: 1;
+}
+
+.avatar > a > img {
+  border-radius: 50%;
+  border: 3px solid currentcolor;
+  display: block;
+  margin: 0 auto;
+  height: 3rem;
+  transition: transform 0.2s;
+}
+
+.avatar > a:hover > img {
+  transform: scale(1.1);
+}
+
+.title > hgroup {
+  flex-grow: 9999;
+  margin-bottom: 0;
+}
+
+section > h3 {
+  --font-size: 1rem;
+  --typography-spacing-vertical: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-1rem) }
+  to   { opacity: 1; transform: translateY(0)     }
+}
+
+header, section {
+  --delay: 0s;
+  --duration: 0.5s;
+  position: relative;
+  opacity: 0.01;
+  animation: var(--duration) ease var(--delay) fadeIn forwards;
+}
+
+section:nth-of-type(1) { --delay: 0.1s }
+section:nth-of-type(2) { --delay: 0.2s }
+section:nth-of-type(3) { --delay: 0.3s }
+
+@media (prefers-reduced-motion) {
+  header, section {
+    --duration: 0s;
+  }
+}

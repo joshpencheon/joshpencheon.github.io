@@ -1,0 +1,64 @@
+:root {
+  --pico-nav-breadcrumb-divider: "/";
+}
+
+a:has(code):is(a,[aria-current]:not([aria-current=false]),:hover,:active,:focus) {
+  --pico-text-decoration: none
+}
+
+a:is([aria-current]:not([aria-current=false]),:hover,:active,:focus) > code {
+  color: var(--pico-code-background-color);
+  background-color: var(--pico-code-color);
+}
+
+hgroup > :not(:first-child):last-child {
+  line-height: 1.5em;
+}
+
+figure > img {
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  text-align: center;
+}
+
+li.page-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+img.avatar {
+  border-radius: 50%;
+  border: 1px solid currentcolor;
+  height: 1.5rem;
+  transition: transform 0.2s;
+}
+
+a:hover > img.avatar {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-1rem) }
+  to   { opacity: 1; transform: translateY(0)     }
+}
+
+nav, div.frontmatter, main {
+  --duration: 0.3s;
+  position: relative;
+  opacity: 0.01;
+  animation: var(--duration) ease var(--delay) fadeIn forwards;
+}
+
+nav { --delay: 0s }
+div.frontmatter { --delay: 0.1s }
+main { --delay: 0.2s }
+
+@media (prefers-reduced-motion) {
+  nav, div.frontmatter, main {
+    --duration: 0s;
+  }
+}
