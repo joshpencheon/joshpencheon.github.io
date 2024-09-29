@@ -24,20 +24,33 @@ figcaption {
   text-align: center;
 }
 
+nav {
+  display: block;
+}
+
 li.page-title {
+  min-width: 0;
+}
+
+li.page-title a {
+  display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-img.avatar {
+li.avatar {
+  flex-shrink: 0;
+}
+
+li.avatar img {
   border-radius: 50%;
   border: 1px solid currentcolor;
   height: 1.5rem;
   transition: transform 0.2s;
 }
 
-a:hover > img.avatar {
+a:hover > li.avatar img {
   transform: scale(1.2);
 }
 
