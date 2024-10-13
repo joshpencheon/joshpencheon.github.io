@@ -9,13 +9,14 @@ header.container {
 .title {
   display: flex;
   flex-wrap: wrap;
-  align-items: end;
+  align-items: center;
   column-gap: 1em;
   row-gap: 1em;
 }
 
 .avatar {
   flex-grow: 1;
+  flex-shrink: 0;
 }
 
 .avatar > a > img {
@@ -28,7 +29,7 @@ header.container {
 }
 
 .avatar > a:hover > img {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .title > hgroup {
