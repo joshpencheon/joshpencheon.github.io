@@ -4,14 +4,15 @@ title: Using Swagger's client code-generation tool
 tags: ruby
 ---
 
-[Swagger Codegen](https://github.com/swagger-api/swagger-codegen) is a neat project than can consume an OpenAPI specification and generate the code required for an API client in a variety of languages.
+[Swagger Codegen](https://github.com/swagger-api/swagger-codegen) is a neat project than can consume an OpenAPI specification and generate the code required for an API client in a variety of languages. Note that both 2.x and 3.x versions of the tool exist, and both are being maintained. I had more luck with 2.x.
 
 ## Installation
 
 On a Mac, this is trivial with HomeBrew:
 
 ```bash
-brew install swagger-codegen
+brew install swagger-codegen@2
+brew link swagger-codegen@2
 ```
 
 ## Example usage
@@ -67,7 +68,7 @@ git commit -am "Output of 'swagger-codegen generate'"
 ```ruby
 # Once you're acquired an access token, configure the library:
 StravaClient.configure do |config|
-  config.base_path #=> => "https://www.strava.com/api/v3"
+  config.base_url #=> => "https://www.strava.com/api/v3"
   config.access_token = "your-access-token-here"
 end
 
@@ -75,6 +76,7 @@ end
 StravaClient::ActivityType.constants.grep /ride/i
 #=> [:E_BIKE_RIDE, :RIDE, :VIRTUAL_RIDE]
 
+# Reading some data (note that 'read:activities' scope will be required here):
 activities = StravaClient::ActivitiesApi.new
 activities.get_logged_in_athlete_activities
 #=> [StravaClient::SummaryActivity, StravaClient::SummaryActivity, ...]
