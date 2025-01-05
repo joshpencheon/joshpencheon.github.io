@@ -37,6 +37,11 @@ li.page-title a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  /* replace margin-based positioning to keep overflow working: */
+  margin-inline-start: 0 !important;
+  position: relative;
+  left: calc(var(--pico-nav-link-spacing-horizontal) * -1);
 }
 
 li.avatar {
