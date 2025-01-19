@@ -4,7 +4,7 @@ title: Shrinking an ext4 partition
 tags: nvme raspberry-pi ssd
 ---
 
-I use a Raspberry Pi as a Time Machine server, and want to improve the setup to allow for offsite backups too. In order to do this, I've like to use ZFS snapshotting along with [syncoid](https://github.com/jimsalterjrs/sanoid#syncoid) to ship them to a remote server.
+I use a Raspberry Pi as a Time Machine server, and want to improve the setup to allow for offsite backups too. In order to do this, I'd like to use ZFS snapshotting along with [syncoid](https://github.com/jimsalterjrs/sanoid#syncoid) to ship them to a remote server.
 
 The RPi is using a single NVMe SSD, and holding the Time Machine data within the root `ext4` partition. I'd like to shrink down that partition, create a new partition for ZFS, and then transfer the data over. (See [part two]({% post_url 2025-01-17-getting-started-with-zfs %})!)
 
