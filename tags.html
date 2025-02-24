@@ -12,7 +12,7 @@ title: Post Tags
 {% assign sorted_tags = site.tags | sort %}
 {% for tag in sorted_tags %}
   {% assign name = tag[0] %}
-  {% assign posts = tag[1] %}
+  {% assign posts = tag[1] | reverse %}
 
   <section>
     <h2 id="{{name}}"><code>#{{ name }}</code></h2>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Booting Raspberry Pi with iSCSI
-tags: netboot networking raspberry-pi zfs
+tags: netboot networking raspberry-pi zfs iscsi
 ---
 
 In order to get a Raspberry Pi booting without any physically attached storage, we need to consider a number of different phases:

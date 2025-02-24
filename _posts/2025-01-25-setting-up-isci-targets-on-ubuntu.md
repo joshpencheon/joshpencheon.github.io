@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Setting up iSCSI targets on Ubuntu
-tags: zfs iscsi
+tags: zfs iscsi systemd
 ---
 
 We can use iSCSI to expose block devices across the network, with the ultimate aim of storing the root volume of one system on another system. The client system (the "initiator") makes requests to the host system (serving the "target"), and can be granted access to one or more "LUN" (logical units) which appear as block devices.
