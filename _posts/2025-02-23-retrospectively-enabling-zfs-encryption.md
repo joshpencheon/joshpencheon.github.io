@@ -38,6 +38,7 @@ We'll now use ZFS's `send`/`receive` to create a new dataset with encryption ena
 sudo zfs send --replicate --verbose \
   main-pool/test-dataset@encryption-time \
   | sudo zfs receive \
+  -s \
   -o encryption=on \
   -o keylocation=file:///root/main-pool-test-dataset.key \
   -o keyformat=hex \
