@@ -45,6 +45,21 @@ sudo zfs send --replicate --verbose \
   main-pool/encrypted-test-dataset
 ```
 
+### Dealing with interruptions
+
+Depending on the size of the source dataset and capabilities of the hardware, it may may take a long time to create the encrypted version of the dataset. This process may get interrupted; if so, the `-s` flag given to `zfs receive` will have caused a "progress" token to be saved against the new dataset. We can extract that, and resume the `zfs send` from that point:
+
+```bash
+# extract the resume token from the target dataset:
+token=$(zfs get -o value -H receive_resume_token main-pool/encrypted-test-dataset)
+
+# restart sending the source dataset from that point:
+sudo zfs send --verbose -t $token \
+  | sudo zfs receive -s main-pool/encrypted-test-dataset
+```
+
+### Swapping datasets
+
 Once happy, we can rename the new encrypted version in place of the original:
 
 ```bash
