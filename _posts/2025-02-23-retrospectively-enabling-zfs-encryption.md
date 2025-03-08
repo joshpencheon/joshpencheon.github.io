@@ -81,3 +81,7 @@ In order make this a secure erase, we can either:
 
 * run `sudo zpool initialize -w main-pool` to zero over the freed space, or
 * issue a secure TRIM erase instruction to the physical devices with `sudo zpool trim --secure -w main-pool` (hardware support allowing).
+
+## Further reading
+
+I've written separately on [automatically mounting encrypted dataset on boot]({% post_url 2025-03-08-mounting-zfs-encrypted-datasets-on-boot %}), which is possible here due to the use of a file as the dataset's `keylocation`.
