@@ -13,7 +13,7 @@ We can use `sudo systemctl edit smbd.service` and then specify via an override t
 * the SMB daemon should not be started until the `time-machine` dataset is mounted (using `After=`), and
 * should the dataset be unmounted, the daemon should also be stopped (using `BindsTo=`)
 
-```conf
+```ini
 [Unit]
 # Serve only when the ZFS mount is available
 BindsTo=srv-time\x2dmachine.mount

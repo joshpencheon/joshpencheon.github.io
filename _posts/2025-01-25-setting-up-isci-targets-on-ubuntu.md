@@ -26,7 +26,7 @@ sudo systemctl edit tgt.service
 
 In this override file, we clear out and replace the `ExecStart` command to provide iSCSI options to listen on just a single interface:
 
-```txt
+```ini
 [Service]
 ExecStart=
 ExecStart=/usr/sbin/tgtd -f --iscsi portal=192.168.20.1:3260
