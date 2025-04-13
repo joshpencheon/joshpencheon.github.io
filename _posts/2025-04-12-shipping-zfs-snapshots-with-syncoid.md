@@ -31,7 +31,7 @@ sudo zfs create -o readonly=on main-pool/backup
 ...then allow our local user the ability to `zfs recv` into new datasets within it:
 
 ```bash
-sudo zfs allow syncoid-receiver create,mount,receive main-pool/backup
+sudo zfs allow syncoid-receiver create,mount,receive,hold main-pool/backup
 ```
 
 ## Pushing an initial backup
@@ -44,6 +44,7 @@ syncoid \
   --no-privilege-elevation \
   --no-sync-snap \
   --no-rollback \
+  --use-hold \
   main-pool/test-dataset \
   syncoid-receiver@receiving-machine:main-pool/backup/test-dataset
 ```
@@ -54,6 +55,7 @@ Breaking down these options:
 * `--no-privilege-elevation` prevents the use of `sudo`, as we've granted the necessary delegated permissions at both ends.
 * `--no-sync-snap` avoids the creation of extra `syncoid`-specific snapshots; the existing snapshot from the preexisting `sanoid` policy will suffice.
 * `--no-rollback` stops the backup dataset from being rolled back if snapshots go missing from the original dataset.
+* `--use-hold` ensures that a ZFS hold is placed on the latest snapshots needed for deltas to be producible, preventing their removal (which would then require a entire re-sync).
 
 ## Verifying the data has arrived
 
@@ -82,6 +84,7 @@ syncoid \
   --no-privilege-elevation \
   --no-sync-snap \
   --no-rollback \
+  --use-hold \
   syncoid-sender@sending-machine:main-pool/test-dataset \
   main-pool/backup/test-dataset
 ```
