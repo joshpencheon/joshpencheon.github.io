@@ -12,10 +12,10 @@ We'll want a few ancillary optional packages installed (`pv`, `mbuffer`, `lzop`)
 
 ### Sending permissions
 
-We'll allow the sending user to send data from the desired dataset(s), as well as to be able to place ZFS holds; this allows us to prevent snapshots that are being used by the process from being removed prematurely.
+We'll allow the sending user to send data from the desired dataset(s), as well as to be able to place and release ZFS holds; this allows us to prevent snapshots that are being used by the process from being removed prematurely.
 
 ```bash
-sudo zfs allow syncoid-sender hold,send main-pool/test-dataset
+sudo zfs allow syncoid-sender hold,send,release main-pool/test-dataset
 ```
 
 _Note that the granting of `send` does permit already-decrypted data to be sent. The is not currently a separate grant that only permits `send --raw`, although there is [a proposal to add one](https://github.com/openzfs/zfs/issues/13099)._
@@ -31,7 +31,7 @@ sudo zfs create -o readonly=on main-pool/backup
 ...then allow our local user the ability to `zfs recv` into new datasets within it:
 
 ```bash
-sudo zfs allow syncoid-receiver create,mount,receive,hold main-pool/backup
+sudo zfs allow syncoid-receiver create,mount,receive,hold,release main-pool/backup
 ```
 
 ## Pushing an initial backup
