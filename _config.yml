@@ -21,4 +21,5 @@ exclude:
 
 # Plugins (extra gems)
 plugins:
+  - jekyll-feed
   - jekyll-seo-tag
