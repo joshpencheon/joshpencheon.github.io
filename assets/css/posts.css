@@ -6,7 +6,8 @@ a:has(code):is(a,[aria-current]:not([aria-current=false]),:hover,:active,:focus)
   --pico-text-decoration: none
 }
 
-a:is([aria-current]:not([aria-current=false]),:hover,:active,:focus) > code {
+a:is([aria-current]:not([aria-current=false]),:hover,:active,:focus) > code,
+a:target > code {
   color: var(--pico-code-background-color);
   background-color: var(--pico-code-color);
 }

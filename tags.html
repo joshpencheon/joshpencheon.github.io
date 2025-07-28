@@ -16,7 +16,11 @@ title: Post Tags
   {% assign posts = tag[1] | reverse %}
 
   <section>
-    <h2 id="{{name}}"><code>#{{ name }}</code></h2>
+    <h2>
+      <a href="/tags#{{name}}" id="{{name}}">
+        <code>#{{name}}</code>
+      </a>
+    </h2>
 
     <ul>
       {% for post in posts %}
