@@ -42,7 +42,7 @@ A combination of Ollama enabling flash attention for CPU-only prompt processing,
 <div class="overflow-auto" markdown="1">
 
   | Model              | Ollama Version | Prompt Eval Rate (tokens/s) | Generation Rate (tokens/s) |
-  |--------------------|----------------|-----------------------------|----------------------------|
+  |--------------------|---------------:|----------------------------:|---------------------------:|
   | gpt-oss:20b        | 0.11.4         | 10.17                       | 6.16                       |
   | gpt-oss:20b        | 0.11.8         | 57.50                       | 10.16                      |
   | qwen3-coder:latest | 0.11.8         | 78.19                       | 13.55                      |
