@@ -29,7 +29,7 @@ I used the following prompt against the `lib/` source of [a small Ruby gem](http
 MODEL="gpt-oss:20b"
 GEM_CODE=$(
   git ls-files -- lib \
-  | xargs -I {} bash-c 'echo -e "{} contains:\n$(cat {})"'
+  | xargs -I {} bash -c 'echo -e "{} contains:\n$(cat {})"'
 )
 echo -e "offer a refactoring suggestion for this ruby gem:\n\n$(GEM_CODE)" \
 | ollama run $MODEL --verbose -
