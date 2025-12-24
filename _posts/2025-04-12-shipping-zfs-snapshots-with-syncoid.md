@@ -18,7 +18,7 @@ We'll allow the sending user to send data from the desired dataset(s), as well a
 sudo zfs allow syncoid-sender hold,send,release main-pool/test-dataset
 ```
 
-_Note that the granting of `send` does permit already-decrypted data to be sent. The is not currently a separate grant that only permits `send --raw`, although there is [a proposal to add one](https://github.com/openzfs/zfs/issues/13099)._
+_Note that `send` does permit already-decrypted data to be sent. At the original time of writing, it was not possible to grant only the use of `send --raw`. However [a proposal to add such a grant](https://github.com/openzfs/zfs/issues/13099) has subsequently been accepted and released as part of ZFS 2.4.0, meaning `send:raw` can be used instead._
 
 ### Receiving permissions
 
