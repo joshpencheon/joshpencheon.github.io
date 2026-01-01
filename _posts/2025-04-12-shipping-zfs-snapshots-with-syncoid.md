@@ -101,7 +101,7 @@ Sample backup server `sanoid` configuration:
         frequently = 0
         hourly = 24
         daily = 5
-        monthly = 1
+        monthly = 2
         yearly = 0
 
         # Retain snapshots according to ^:
