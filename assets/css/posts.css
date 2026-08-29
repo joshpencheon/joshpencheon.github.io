@@ -65,19 +65,18 @@ li.avatar > a:hover img {
   to   { opacity: 1; transform: translateY(0)     }
 }
 
-nav, div.frontmatter, main {
+div.frontmatter, main {
   --duration: 0.3s;
   position: relative;
   opacity: 0.01;
   animation: var(--duration) ease var(--delay) fadeIn forwards;
 }
 
-nav { --delay: 0s }
-div.frontmatter { --delay: 0.1s }
-main { --delay: 0.2s }
+div.frontmatter { --delay: 0s }
+main { --delay: 0.1s }
 
 @media (prefers-reduced-motion) {
-  nav, div.frontmatter, main {
+  div.frontmatter, main {
     --duration: 0s;
   }
 }
