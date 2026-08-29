@@ -15,12 +15,12 @@ RUST_LOG=niri=error niri --session
 
 Once this is made executable, we can specify it in the `greetd` configuration (other greeters are available), along with an optional `user` for auto-login:
 
-```bash
+```toml
 # /etc/greetd/config.toml
 
 [default_session]
 command = "/usr/local/bin/niri-session"
-user = josh
+user = "josh"
 ```
 
 Happy silent booting!
