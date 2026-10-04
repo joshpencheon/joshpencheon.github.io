@@ -15,10 +15,10 @@ We'll want a few ancillary optional packages installed (`pv`, `mbuffer`, `lzop`)
 We'll allow the sending user to send data from the desired dataset(s), as well as to be able to place and release ZFS holds; this allows us to prevent snapshots that are being used by the process from being removed prematurely.
 
 ```bash
-sudo zfs allow syncoid-sender hold,send,release main-pool/test-dataset
+sudo zfs allow syncoid-sender hold,send:raw,release main-pool/test-dataset
 ```
 
-_Note that `send` does permit already-decrypted data to be sent. At the original time of writing, it was not possible to grant only the use of `send --raw`. However [a proposal to add such a grant](https://github.com/openzfs/zfs/issues/13099) has subsequently been accepted and released as part of ZFS 2.4.0, meaning `send:raw` can be used instead._
+_Note `send:raw` was added in ZFS 2.4.0, and prevents the delegated user from sending an encrypted dataset in decrypted form. For prior versions, only `send` exists. ZFS 2.4.4+ also added support for `send:encrypted`, which disallows the sending of any non-encrypted data, but is not (at the time of writing) yet included in Ubuntu LTS._
 
 ### Receiving permissions
 
